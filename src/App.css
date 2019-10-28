@@ -1,29 +1,142 @@
-.App {
+body{
+    background: #1c2025;
+  }
+  
+  a:hover{
+    text-decoration: none;
+  }
+  .App {
+  }
+  
+  .App-logo {
+    height: 40vmin;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #09d3ac;
+  }
+  
+  .mb-15{
+    margin-bottom:15px;
+  }
+  
+  .mt-15{
+    margin-top:15px;
+  }
+  
+  
+  .card-title {
+    max-height: 101px;
+    min-height: 48px;
+  }
+  
+  .movie-card .card:hover {
+    box-shadow: 0px 0px 53px 0px rgba(0, 0, 0, 0.35);
+  }
+  
+  a.movie-card {
+    /* float: left; */
+    /* width: 100%; */
+    display: block;
+    transition: 0.5s ease all;
+  }
+  
+  .card {
+    border: 0;
+    box-shadow: 8px 5px 7px 0px rgba(0, 0, 0, 0.12);
+    transition: 0.5s ease all;
+    position: relative;
+  }
+  
+  .card-title {
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .year {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+  }
+
+  .card {
+    background: #23282f;
 }
 
-.App-logo {
-  height: 40vmin;
+.card-title {
+    color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App input {
+    background: transparent;
+    border-radius: 0;
+    height: 52px;
+    border: 3px solid #414952;
 }
 
-.App-link {
-  color: #09d3ac;
+.App input:focus {
+    background: #2b323c;
+    border-color: #CCC;
+    outline: 0px;
 }
 
-.mb-15{
-  margin-bottom:15px;
+.single-header h1{
+    color: #FFF;
 }
 
-.mt-15{
-  margin-top:15px;
+.single-header span{
+    color: #FFF;
+}
+.single-header hr{
+    border-color: rgba(255, 255, 255, 0.24);
+}
+.list-group-item{
+    background:#2f3640;
+    color: #FFF;
+}
+
+.notfound-content {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+a.logo {
+    margin: 25px 0;
+    float: left;
+    width: 100%;
+    color: #CCC;
+    font-size: 2.3em;
+}
+
+.notfound-content h1 {
+    color: #FFF;
+    font-size: 23vh;
+    font-weight: 900;
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.notfound-content h1:before {content: '404';position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);color: rgba(255, 255, 255, 0.02);font-size: 1.5em;}
+
+.notfound-content h3 {
+    color: #FFF;
+}
+
+@media (min-width:576px){
+    .card-columns{
+        column-count:4;
+    }
 }

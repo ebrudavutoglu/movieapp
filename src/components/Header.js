@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
 
 
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    Container,
-    Form,
-    Input
-} from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, Container } from 'reactstrap';
+
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+
     return (
         <div>
             <Navbar color="light" light expand="md" className="navbar-dark bg-dark">
@@ -27,9 +21,7 @@ function Header() {
 
 
                         </Nav>
-                        <Form>
-                            <Input type="search" name="search" id="search" placeholder="Search" />
-                        </Form>
+
                     </Collapse>
                 </Container>
             </Navbar>

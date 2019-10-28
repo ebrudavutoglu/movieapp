@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Movie from './pages/Movie';
-import Home from './pages/Home';
-import Search from './pages/Search';
+import Movies from './pages/Movies';
+import NotFound from './pages/NotFound';
 import { Container } from 'reactstrap';
 
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 function App() {
   return (
@@ -16,9 +16,10 @@ function App() {
         <Header></Header>
         <Container>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Movies} />
             <Route path="/movie/:id" component={Movie} />
-            <Route path="/movie/:id" component={Search} />
+            <Route path="*" component={NotFound} status={404} />
+            <Redirect to="/404" />
           </Switch>
         </Container>
       </div>

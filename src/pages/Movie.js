@@ -14,16 +14,10 @@ function Movie({ match }) {
         const movie = await data.json();
         setMovie(movie)
     }
-    let imageMovie;
-    if (movie.Poster == "N/A") {
-        imageMovie = <CardImg top width="100%" src="/images/default.jpg" alt={movie.Title} />;
-    } else {
-        imageMovie = <CardImg top width="100%" src={movie.Poster} alt={movie.Title} />;
-    }
     return (
         <Row className="mt-15">
             <Col md="4">
-                {imageMovie}
+                <CardImg top width="100%" src={movie.Poster === 'N/A' ? 'https://placehold.it/198x264&text=Image+Not+Found' : movie.Poster} alt={movie.Title} />
             </Col>
             <Col md="8">
                 <div className="singlepage-right">
