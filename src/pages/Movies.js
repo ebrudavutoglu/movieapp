@@ -59,24 +59,21 @@ class Movies extends Component {
                         placeholder="with a placeholder"
                         value={this.state.search}
                         onChange={this.inputChanged}
-                    /* onKeyPress={(e) => {
-                        if (e.key === 'Enter') {
-                            this.filterList()
-                        }
-                    }} */
+
                     />
                 </Col>
                 <Col md="12">
-                    <CardColumns className="mt-15">
-                        {
-                            this.state.loading && <Spinner color="primary" />
-                        }
-                        {
-                            filteredMovies !== null && filteredMovies.length > 0 ? (
-                                filteredMovies !== null && filteredMovies.length > 0 && filteredMovies.map((movie) =>
+
+                    {
+                        this.state.loading && <Spinner color="primary" />
+                    }
+                    {
+                        filteredMovies !== null && filteredMovies.length > 0 ? (
+                            <CardColumns className="mt-15">
+                                {filteredMovies !== null && filteredMovies.length > 0 && filteredMovies.map((movie) =>
 
 
-                                    <Card>
+                                    <Card key={movie.imdbID}>
                                         <Link className="movie-card" to={`/movie/${movie.imdbID}`}>
                                             <CardImg className="card-image" top width="100%" src={movie.Poster === 'N/A' ? 'https://placehold.it/198x264&text=Default+Image' : movie.Poster} alt={movie.Title} />
                                             <CardBody>
@@ -86,15 +83,16 @@ class Movies extends Component {
                                         </Link>
                                     </Card>
 
-                                )
-                            ) : (
-                                    <Alert className="mt-15" color="danger" message={this.state.error} type="error"> Data is not found</Alert>
-                                )
+                                )}
+                            </CardColumns>
+                        ) : (
+                                <Alert className="mt-15 float-left" color="danger" message={this.state.error} type="error"> Movie is not found</Alert>
+                            )
 
 
 
-                        }
-                    </CardColumns>
+                    }
+
                 </Col>
             </Row>
         )
